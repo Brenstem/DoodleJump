@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -24,9 +25,18 @@ public class Health : MonoBehaviour
     private void Die()
     {
         if (transform.gameObject.CompareTag("Player"))
+        {
             transform.gameObject.SetActive(false);
 
+            if (Application.CanStreamedLevelBeLoaded("GameOver"))
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+        }
+
         else
+        {
             Destroy(this.gameObject);
+        }
     }
 }
