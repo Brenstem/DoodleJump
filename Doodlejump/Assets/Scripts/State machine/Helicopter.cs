@@ -8,8 +8,6 @@ public class Helicopter: IPowerupState
     private float powerupTimer;
     private Rigidbody2D rb;
 
-    public string meme = "meme";
-
     public Helicopter(StatePatternPlayer p)
     {
         player = p;
