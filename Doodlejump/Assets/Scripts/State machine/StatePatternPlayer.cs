@@ -34,7 +34,14 @@ public class StatePatternPlayer : MonoBehaviour
     // Public function
     public void ChangeState(IPowerupState state)
     {
-        currentState = state;
-        currentState.Enter();
+        if (state != currentState)
+        {
+            currentState = state;
+            currentState.Enter();
+        }
+        else
+        {
+            Debug.Log("Can't transition to current state");
+        }
     }
 }

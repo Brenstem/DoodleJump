@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damage : MonoBehaviour
+public class AreaDamage : MonoBehaviour
 {
     [SerializeField] int damage;
     [SerializeField] bool damageEnvironment;
