@@ -20,7 +20,6 @@ public class JumpBoost : IPowerupState
 
     public void Exit()
     {
-        player.ChangeState(player.normalState);
         player.GetComponent<MoveController>().bounceForce -= player.jumpBoostAmount;
     }
 
@@ -30,7 +29,7 @@ public class JumpBoost : IPowerupState
 
         if (powerupTimer > player.jumpTimerLength)
         {
-            Exit();
+            player.ChangeState(player.normalState);
         }
     }
 }

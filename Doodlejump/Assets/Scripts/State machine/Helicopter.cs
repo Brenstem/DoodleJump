@@ -21,7 +21,6 @@ public class Helicopter: IPowerupState
 
     public void Exit()
     {
-        player.ChangeState(player.normalState);
     }
 
     public void PowerupEffect()
@@ -32,7 +31,7 @@ public class Helicopter: IPowerupState
 
         if (powerupTimer > player.helicopterLength)
         {
-            Exit();
+            player.ChangeState(player.normalState);
         }
     }
 }

@@ -6,11 +6,9 @@ public class MoveController : MonoBehaviour
     [SerializeField] bool autoMove;
     public float bounceForce;
 
-
     private Rigidbody2D rb;
     private float horizontalInput;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,7 +17,6 @@ public class MoveController : MonoBehaviour
         {
             horizontalInput = 1;
         }
-
     }
 
     private void Update()
@@ -30,7 +27,6 @@ public class MoveController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
